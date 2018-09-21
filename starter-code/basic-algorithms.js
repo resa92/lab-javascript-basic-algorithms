@@ -72,10 +72,35 @@ if(cleanString.join() !== cleanString.reverse().join()){
 
 //Exercise 10
 
-var loremIpsum = " ipsum dolor sit amet, consectetur adipiscing elit. Nam ut elementum orci. Curabitur molestie augue sem, id congue eros accumsan nec. Etiam ut sapien porttitor, congue sapien quis, lacinia nisl. In hac habitasse platea dictumst. Vestibulum iaculis arcu dui, ut pellentesque massa lacinia ac. Quisque vitae diam vitae ligula eleifend fermentum id id lorem. Donec faucibus lorem quis ornare fringilla. Suspendisse sed euismod massa. Quisque sed iaculis nunc, vitae mollis urna. Suspendisse id tincidunt lacus. Cras vel ornare ligula. Integer pellentesque eros et felis mollis eleifend. Donec accumsan tincidunt eros, nec facilisis velit porttitor sit amet. Aliquam cursus nisl eu sem convallis eleifend. Etiam condimentum quis lacus quis vestibulum. Nullam egestas quis elit at pretium. Nunc sodales eros nec pretium rhoncus. Maecenas et lobortis nulla. Nulla ac elit sit amet nibh laoreet rhoncus. In aliquet sit amet ligula ac lacinia. Nunc ex odio, blandit eu nisi pharetra, imperdiet tincidunt enim. Nam et auctor metus, nec efficitur ligula. Mauris pharetra libero ut dui mattis condimentum. Donec egestas nunc lacus, quis hendrerit enim semper at. Nullam mattis purus vel vulputate mattis. Sed nec ultrices turpis. Maecenas bibendum justo vitae sem fermentum, ut eleifend nulla egestas. Cras ut porttitor enim. Sed mollis a nisi et facilisis. Nulla sit amet metus dapibus, varius dolor eu, pulvinar dui. Sed sed tincidunt magna, in sagittis sem. Nulla gravida, ligula et rhoncus scelerisque, ex eros aliquet justo, ac pulvinar diam leo nec massa. Nam at suscipit purus. Aenean quis dolor eu dui egestas molestie et a mi. Morbi interdum, arcu a rutrum varius, lectus enim efficitur ipsum, ut scelerisque magna tortor vel mauris. Phasellus pulvinar iaculis venenatis. Ut ultrices massa turpis, eget aliquet dui suscipit ut. Curabitur at felis interdum, volutpat quam tempus, aliquam eros. "
-function WordCount(str) { 
+var loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut elementum orci. Curabitur molestie augue sem, id congue eros accumsan nec. Etiam ut sapien porttitor, congue sapien quis, lacinia nisl. In hac habitasse platea dictumst. Vestibulum iaculis arcu dui, ut pellentesque massa lacinia ac. Quisque vitae diam vitae ligula eleifend fermentum id id lorem. Donec faucibus lorem quis ornare fringilla. Suspendisse sed euismod massa. Quisque sed iaculis nunc, vitae mollis urna. Suspendisse id tincidunt lacus. Cras vel ornare ligula. Integer pellentesque eros et felis mollis eleifend. Donec accumsan tincidunt eros, nec facilisis velit porttitor sit amet. Aliquam cursus nisl eu sem convallis eleifend. Etiam condimentum quis lacus quis vestibulum. Nullam egestas quis elit at pretium. Nunc sodales eros nec pretium rhoncus. Maecenas et lobortis nulla. Nulla ac elit sit amet nibh laoreet rhoncus. In aliquet sit amet ligula ac lacinia. Nunc ex odio, blandit eu nisi pharetra, imperdiet tincidunt enim. Nam et auctor metus, nec efficitur ligula. Mauris pharetra libero ut dui mattis condimentum. Donec egestas nunc lacus, quis hendrerit enim semper at. Nullam mattis purus vel vulputate mattis. Sed nec ultrices turpis. Maecenas bibendum justo vitae sem fermentum, ut eleifend nulla egestas. Cras ut porttitor enim. Sed mollis a nisi et facilisis. Nulla sit amet metus dapibus, varius dolor eu, pulvinar dui. Sed sed tincidunt magna, in sagittis sem. Nulla gravida, ligula et rhoncus scelerisque, ex eros aliquet justo, ac pulvinar diam leo nec massa. Nam at suscipit purus. Aenean quis dolor eu dui egestas molestie et a mi. Morbi interdum, arcu a rutrum varius, lectus enim efficitur ipsum, ut scelerisque magna tortor vel mauris. Phasellus pulvinar iaculis venenatis. Ut ultrices massa turpis, eget aliquet dui suscipit ut. Curabitur at felis interdum, volutpat quam tempus, aliquam eros. "
+function wordCount(str) { 
   return str.split(" ").length;
 }
 
-console.log("The number of words in the string is " + WordCount(loremIpsum));
+console.log("The number of words in the string is " + wordCount(loremIpsum));
 
+//Option 1 - Count 'et' word
+
+function countEt(splitArray)  {
+  var splitArray = str2.split(" ").length;
+  return splitArray.filter(function(word){
+    if (word==="et") {
+      return word;
+    }; 
+  })
+}
+console.log("The word 'et' appears " + countEt(loremIpsum))
+
+//Option 2 - Count 'et' word (best & easier method)
+
+function countEt2(splitArray2) {
+  var counter = 0;
+  var splitArray2 = str3.split(" ").length;
+  splitArray2.forEach(function(word){
+    if (word==="et") {
+      counter++;
+    };  
+  })
+  return counter;
+}
+console.log("The word 'et' appears " + countEt2(loremIpsum))
